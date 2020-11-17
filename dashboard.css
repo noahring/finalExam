@@ -1,0 +1,25 @@
+#tooltip.hidden {
+    display:none;
+}
+
+#tooltip
+{
+    position:absolute;
+    width:300px;
+    height:auto;
+    padding:10px;
+    background-color:white;
+    border-radius:10px;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.4);
+    pointer-events:none;
+}
+
+div {
+    float: right;
+    
+}
+
+#my_dataviz {
+    width: 600px;
+    height: 600px;
+}

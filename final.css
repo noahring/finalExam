@@ -3,9 +3,24 @@ h1 {
     font-size: 80
 }
 p {
-   font-size: 28 
+   
+   text-align: center;
+   font-size: 28; 
 }
 
-div{
-     
+ul {
+    text-align: center;
+}
+
+li {
+    text-align: center;
+    font-size: 75
+}
+
+#dashboard {
+    font-size: 50;
+}
+
+a {
+    color: black;
 }
