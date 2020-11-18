@@ -140,9 +140,9 @@ var drawLabels = function(graphDim,margins)
 
 
 
-var margin = {top: 10, right: 30, bottom: 30, left: 40},
-    width = 460 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+var margin = {top: 35, right: 30, bottom: 30, left: 40},
+    width = 600 - margin.left - margin.right,
+    height = 610 - margin.top - margin.bottom;
 
 
 
@@ -154,18 +154,18 @@ var svg = d3.select("#my_dataviz")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
- d3.csv("nba2k20-fulldata.csv", function(players) {
+var violin = function(players) {
 
   
   var y = d3.scaleLinear()
-    .domain([ 65,100 ])          
+    .domain([ 0,40 ])          
     .range([height, 0])
   svg.append("g").call( d3.axisLeft(y) )
     
   var x = d3.scaleBand()
     .range([ 0, width ])
     .domain(["Rating"])
-    .padding(0.05)     
+         
   svg.append("g")
     .attr("transform", "translate(0," + height + ")")
     .call(d3.axisBottom(x))
@@ -184,7 +184,7 @@ var svg = d3.select("#my_dataviz")
     })
     .entries(players)
     
-    var maxNum = 98
+    var maxNum = 0
   for ( i in sumstat ){
     allBins = sumstat[i].value
     lengths = allBins.map(function(a){return a.length;})
@@ -206,14 +206,26 @@ var svg = d3.select("#my_dataviz")
     .append("path")
         .datum(function(d){ return(d.value)})     
         .style("stroke", "none")
-        .style("fill","#69b3a2")
+        .style("fill","red")
         .attr("d", d3.area()
             .x0(function(d){ return(xNum(-d.length)) } )
             .x1(function(d){ return(xNum(d.length)) } )
             .y(function(d){ return(y(d.x0)) } )
             .curve(d3.curveCatmullRom)    
         )
-})
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -222,6 +234,8 @@ var successFCN = function(players)
 {
     console.log("ratings",players);
     initGraph(players);
+    violin(players);
+    
     
     
 }
