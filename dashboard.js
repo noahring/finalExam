@@ -206,7 +206,7 @@ var violin = function(players) {
     .append("path")
         .datum(function(d){ return(d.value)})     
         .style("stroke", "none")
-        .style("fill","red")
+        .style("fill","black")
         .attr("d", d3.area()
             .x0(function(d){ return(xNum(-d.length)) } )
             .x1(function(d){ return(xNum(d.length)) } )
@@ -218,25 +218,13 @@ var violin = function(players) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 var successFCN = function(players)
 {
     console.log("ratings",players);
     initGraph(players);
     violin(players);
-    
-    
+   
+
     
 }
 

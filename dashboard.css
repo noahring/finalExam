@@ -22,4 +22,44 @@ div {
 #my_dataviz {
     width: 600px;
     height: 600px;
+    float: left
+}
+
+#bargraph {
+ 
+    float: right;
+    clear: left;
+    
+}
+
+#desc {
+    width: 300;
+    text-align: center;
+    float: left;
+    font-size: 20
+}
+
+#desc2 {
+    width: 325;
+    text-align: center;
+    float: left;
+    font-size: 20
+}
+
+h1 {
+    text-align: center;
+    font-size: 100;
+}
+
+img {
+    height: 400;
+    
+    
+}
+
+#desc3 {
+    width: 325;
+    text-align: center;
+    float: left;
+    font-size: 20
 }
